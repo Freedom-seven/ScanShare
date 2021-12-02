@@ -12,15 +12,45 @@ const Stack = createStackNavigator();
 const Navigator = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName={WelcomeScreen} screenOptions={
+            <Stack.Navigator initialRouteName={WelcomeScreen} >
+                <Stack.Screen name="Welcome" component={WelcomeScreen} options={
                 {
                     headerShown: false
                 }
-            } >
-                <Stack.Screen name="Welcome" component={WelcomeScreen} />
-                <Stack.Screen name="GetStarted" component={GetStartedScreen} />
-                <Stack.Screen name="Register" component={RegisterScreen} />
-                <Stack.Screen name="Login" component={LoginScreen} />
+            } />
+                <Stack.Screen name="GetStarted" component={GetStartedScreen} options={
+                {
+                    headerShown: false
+                }
+            } />
+                <Stack.Screen name="Register" component={RegisterScreen} options={
+                {
+                    title: 'Register',
+                    headerStyle: {
+                        backgroundColor: '#f75555',
+                        height: 120,
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold'
+                    },
+                    headerTitleAlign: 'center',
+                }
+                } />
+                <Stack.Screen name="Login" component={LoginScreen} options={
+                {
+                    title: 'Sign In',
+                    headerStyle: {
+                        backgroundColor: '#f75555',
+                        height: 120,
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold'
+                    },
+                    headerTitleAlign: 'center',
+                }
+                } />
             </Stack.Navigator>
         </NavigationContainer>
     )
