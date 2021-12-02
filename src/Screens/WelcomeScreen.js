@@ -8,13 +8,14 @@ const WelcomeScreen = () => {
     <View style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
-          source={require("../../assets/images/ampersand_logo.png")}
+          source={require("../../assets/images/logo.png")}
           style={styles.logo}
         />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.ampersandText}>AMPERSAND </Text>
-        <Text style={styles.ampersandText}>CONTACTS</Text>
+        <Text style={styles.scanText}>scanbox.</Text>
+        <Text style={styles.scanText}>contacts</Text>
+        <Text style={styles.scanText}>share</Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -44,8 +45,8 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: "60%",
-    height: 80,
+    width: "80%",
+    height: 120,
   },
 
   textContainer: {
@@ -56,10 +57,11 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
 
-  ampersandText: {
+  scanText: {
     fontSize: 20,
     fontWeight: "bold",
     color: "#666",
+    textTransform: "uppercase",
   },
 
   buttonContainer: {
