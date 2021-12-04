@@ -100,17 +100,6 @@ const RegisterScreen = () => {
             value={password}
           />
         </View>
-        <View style={styles.inputContainer}>
-          <Text style={styles.label}>Confirm Password</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="*******"
-            keyboardType="default"
-            secureTextEntry
-            onChangeText={onChangeConfirmPassword}
-            value={confirmPassword}
-          />
-        </View>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button}>
@@ -132,7 +121,7 @@ const styles = StyleSheet.create({
     flex: 3,
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 30,
+    paddingVertical: 35,
     resizeMode: "stretch",
   },
   addProfile: {
@@ -148,7 +137,7 @@ const styles = StyleSheet.create({
   formContainer: {
     flex: 6,
     marginHorizontal: 20,
-    paddingVertical: 10,
+    paddingVertical: 20,
   },
   inputContainer: {
     flexDirection: "row",
@@ -168,7 +157,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   buttonContainer: {
-    flex: 1.2,
+    flex: 1,
     marginHorizontal: 20,
     paddingVertical: 15,
   },
