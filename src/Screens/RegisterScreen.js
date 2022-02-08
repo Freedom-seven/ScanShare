@@ -7,25 +7,30 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import Imagepicker from "./Imagepicker";
+
 
 const RegisterScreen = () => {
-  const [name, onChangeName] = React.useState("");
-  const [email, onChangeEmail] = React.useState("");
-  const [number, onChangeNumber] = React.useState("");
-  const [role, onChangeRole] = React.useState("");
-  const [twitter, onChangeTwitter] = React.useState("");
-  const [linkedIn, onChangeLinkedIn] = React.useState("");
-  const [password, onChangePassword] = React.useState("");
-  const [confirmPassword, onChangeConfirmPassword] = React.useState("");
+  const [name, onChangeName] = React.useState('');
+  const [email, onChangeEmail] = React.useState('');
+  const [number, onChangeNumber] = React.useState('');
+  const [role, onChangeRole] = React.useState('');
+  const [twitter, onChangeTwitter] = React.useState('');
+  const [linkedIn, onChangeLinkedIn] = React.useState('');
+  const [password, onChangePassword] = React.useState('');
 
+  const { navigate } = useNavigation();
+
+  const onSubmit = () => {
+    navigate("Home");
+  };
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.heroContainer}>
-        <AntDesign name="user" size={80} color="#f75555" style={styles.icon} />
-        <TouchableOpacity style={styles.addProfile}>
-          <Text style={styles.addProfileText}>add profile photo</Text>
-        </TouchableOpacity>
+    <ScrollView style={styles.container} >
+      <View style={styles.photoContainer}>
+        <View style={styles.hero}>
+        <Imagepicker />
+        </View>
       </View>
       <View style={styles.formContainer}>
         <View style={styles.inputContainer}>
@@ -102,7 +107,7 @@ const RegisterScreen = () => {
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={onSubmit}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
       </View>
@@ -117,25 +122,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  heroContainer: {
-    flex: 3,
+  photoContainer: {
+    flex: 4,
+  },
+  hero: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 35,
-    resizeMode: "stretch",
+    marginBottom: 20,
   },
-  addProfile: {
-    padding: 10,
-  },
-  addProfileText: {
-    fontSize: 16,
-    color: "#f75555",
-    textTransform: "uppercase",
-    fontWeight: "bold",
-  },
-
   formContainer: {
-    flex: 6,
+    flex: 5,
     marginHorizontal: 20,
     paddingVertical: 20,
   },
