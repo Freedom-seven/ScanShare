@@ -7,8 +7,11 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
+  const { navigate } = useNavigation();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -53,7 +56,7 @@ const LoginScreen = () => {
           </View>
         </View>
         <View style={styles.signIn}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => navigate('Home')} >
             <Text style={styles.buttonText}>sign in</Text>
           </TouchableOpacity>
         </View>
